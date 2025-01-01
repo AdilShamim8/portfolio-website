@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adil Shamim - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Adil Shamim</h1>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <img src="image/file.png" alt="Adil Shamim Profile Photo" class="profile-photo">
+            <h2>Machine Learning Specialist</h2>
+            <p>Dedicated to leveraging programming and machine learning to contribute to innovative AI-driven projects.</p>
+            <a href="https://drive.google.com/file/d/1piRlmRj7sKd8arAKm4a3ChuZ_whWiewN/view?usp=sharing" target="_blank" class="btn">View Resume</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am a fresher in the field of Machine Learning with a strong academic foundation in Computer Science and Engineering from BNIST University. Passionate about applying AI to real-world problems and continuously learning new technologies.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li>Programming Languages: Python, Java</li>
+                <li>Web Development: HTML, CSS , JAVASCRIPT </li>
+                <li>Machine Learning: TensorFlow, scikit-learn, Algorithms, Data Preprocessing</li>
+                <li>Languages Known: English, Hindi, Bengali</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>Placement Project:</strong> Logistic Regression model for placement predictions.</li>
+                <li><strong>Book Recommender System:</strong> Suggested books based on user preferences.</li>
+                <li><strong>Cat vs. Dog Image Classification:</strong> Built a CNN to classify images of cats and dogs.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Connect with Me</h2>
+            <p>Feel free to reach out for collaboration, queries, or just to connect!</p>
+            <div class="contact-wrapper">
+                <form name="submit-to-google-sheet" action="#" method="POST" class="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="Name" placeholder="Your Name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="Email" placeholder="Your Email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="Message" rows="5" placeholder="Your Message" required></textarea>
+
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+                <span id="msg"></span>
+
+                <div class="social-media">
+
+                    <ul class="social-links">
+                        <li><a href="http://linkedin.com/in/adilshamim8" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://github.com/AdilShamim8" target="_blank">GitHub</a></li>
+                        <li><a href="https://x.com/adil_shamim8" target="_blank">Twitter</a></li>
+                        <li><a href="https://leetcode.com/u/AdilShamim8/" target="_blank">LeetCode</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Adil Shamim. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+
+
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxLLeKXGKuKt44iJ-6HNVy-kROthTrFPbqKhSHdLSn8e-JOB_9TlhZ--FBVE-06PzQU/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg");
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {  
+            msg.innerHTML = "Message sent successfully";  
+            setTimeout(function() {  
+            msg.innerHTML = "";  
+                }, 5000);  
+                form.reset();  
+                })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+
+
+
+
+
+</body>
+</html>
